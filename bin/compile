@@ -12,7 +12,7 @@ PLATFORM=linux64
 
 if [ -f $ENV_DIR/FIREFOX_VERSION ]; then
   VERSION=$(cat $ENV_DIR/FIREFOX_VERSION)
-  echo "Geckodriver version defined as: v${VERSION}"
+  echo "-----> Firefox version defined as: v${VERSION}"
 else
   VERSION=latest
 fi
