@@ -3,8 +3,8 @@
 cat << EOF
 ---
 config_vars:
-  PATH: "/usr/local/bin:/usr/bin:/bin:/app/vendor/firefox"
-  LD_LIBRARY_PATH: "/usr/local/lib:/usr/lib:/lib:/app/vendor/firefox"
+  PATH: "/app/.heroku/python/bin:/usr/local/bin:/usr/bin:/bin:/app/vendor:/app/vendor/firefox"
+  LD_LIBRARY_PATH: "/app/.heroku/python/lib:/usr/local/lib:/usr/lib:/lib:/app/vendor:/app/vendor/firefox"
   TMPDIR: "/app/tmp"
 default_process_types:
   console: "vendor/firefox/firefox"
