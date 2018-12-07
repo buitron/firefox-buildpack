@@ -6,16 +6,16 @@ BUILD_DIR=${1:-}
 CACHE_DIR=${2:-}
 ENV_DIR=${3:-}
 
-# config
+# Config Globals
 LANG=en-US
 PLATFORM=linux64
 
 if [ -f $ENV_DIR/FIREFOX_VERSION ]; then
   VERSION=$(cat $ENV_DIR/FIREFOX_VERSION)
+  echo "Geckodriver version defined as: v${VERSION}"
 else
   VERSION=latest
 fi
-
 
 # Buildpack URL
 ARCHIVE_NAME=firefox
@@ -25,7 +25,7 @@ BUILDPACK_FIREFOX_PACKAGE="https://download.mozilla.org/?product=firefox-${VERSI
 mkdir -p $CACHE_DIR
 if ! [ -e $CACHE_DIR/$FILE_NAME ]; then
   echo "-----> Fetching Firefox package from ${BUILDPACK_FIREFOX_PACKAGE}"
-  curl $BUILDPACK_FIREFOX_PACKAGE -L -o $CACHE_DIR/$FILE_NAME
+  curl -s $BUILDPACK_FIREFOX_PACKAGE -L -o $CACHE_DIR/$FILE_NAME
 fi
 
 echo "-----> Extracting Firefox binaries to ${BUILD_DIR}/vendor/${ARCHIVE_NAME}"
