@@ -7,15 +7,15 @@ This is a [Heroku buildpack](http://devcenter.heroku.com/articles/buildpacks) fo
 Example usage:
 
 ```shell
-$ heroku create --stack cedar --buildpack http://github.com/buitron/firefox-buildpack
+$ heroku create [appname] --buildpack http://github.com/buitron/firefox-buildpack
 
 # or if your app is already created:
-$ heroku config:add BUILDPACK_URL=http://github.com/buitron/firefox-buildpack
+$ heroku buildpacks:add http://github.com/buitron/firefox-buildpack
 
 $ git push heroku master
 ```
 
-# Configuring the downloaded version of Firefox
+## Configuring the downloaded version of Firefox
 
 By default, this buildback will download the latest release which is provided
 by [Firefox](https://www.mozilla.org/en-US/firefox/releases/).
@@ -30,6 +30,6 @@ If you're using [heroku-buildpack-multi](https://devcenter.heroku.com/articles/u
     LD_LIBRARY_PATH="/usr/local/lib:/usr/lib:/lib:/app/vendor/firefox"
 
 
-## Credit
+<!-- ## Credit
 
-I cloned a portion of this code from @bensomers so that I can configure the variables to create a recent buildpack for Heroku.
+I cloned a portion of this code from @bensomers so that I can configure the variables to create a recent buildpack for Heroku. -->
